@@ -9,7 +9,8 @@ type Hotels struct {
 }
 
 func (c Hotels) Index() revel.Result {
-	return c.Render()
+	var query = c.Params.Query
+	return c.Render(query)
 }
 
 func (c Hotels) Show() revel.Result {
